@@ -1,0 +1,399 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/10/2020, 16:12:03
+    Author     : Microsoft
+*/
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:#f1f3f4;
+    font-family:sans-serif;
+}
+.top-nav-bar{
+    height:57px;
+    top:0;
+    position: sticky;
+    background:#fff;
+    margin-bottom:20px;
+    border-bottom:3px solid orange;
+    z-index:2;  
+}
+.logo{
+    height:40px;
+    margin:5px 10px;
+}
+.search-box{
+   display:inline-fex;
+   width:60%;
+}
+.form-control{
+  margin-top:;;
+  margin-left:;;
+  border:1px solid;  
+  border-top-left-radius:;;
+  border-bottom-left-radius:;;
+  border-top-right-radius:;;
+  border-bottom-right-radius:;;
+  box-shadow:none;  
+}
+.input-group-text{
+    background: ;;
+    border:;;
+    margin:;;
+    border-top-left-radius:;;
+    border-bottom-left-radius:;;
+    border-top-right-radius:;;
+    border-bottom-right-radius:;;
+    cursor:pointer;
+}
+.menu-bar{
+ width:;;
+ height:;;
+ float:right;
+}
+.menu-bar ul{
+    display:inline-flex;
+    float:right;
+}
+.menu-bar ul li{
+    border-left:;;
+    list-style-type:;;
+    padding:;;
+    text-align:;;
+    background-color: ;;
+    cursor:pointer;
+}
+.menu-bar ul li a{
+    font-size:16px;
+    font-weight:bold;
+    color:#BBB;
+    text-decoration:none;
+}
+.shopping{
+    margin-right: 5px;
+}
+@media only screen and (max-width:980px){
+    .top-nav-bar{
+        height:118px;
+        border-bottom:0;
+    }
+    .search-box{
+        width:100%;
+    }
+    .menu-bar{
+        
+    }
+    .menu-bar ul{
+        
+    }
+    .menu-bar ul li{
+        height:57px;
+        width:100%;
+    }
+}
+
+/*----- Sidemenu----*/
+
+.side-menu{
+    height:79%;
+    width:15%;
+    font-size:14px;
+    float:left;
+    z-index:2;
+    background-color:#ddd;
+}
+.side-menu ul{
+    margin-left:auto;
+}
+
+.side-menu ul li{
+    list-style-type: none;
+    font-weight:bold;
+    margin-top:10px;
+    cursor:pointer;
+}
+.side-menu ul li:hover{
+    color:orange;
+}
+.side-menu ul li ul{
+    display:none;
+    z-index:10;
+    top:77px;
+}
+.side-menu ul li:hover ul{
+    display:block;
+    heigth:400px;
+    margin-left:14%;
+    padding:0 100px 10px 90px;
+    position:fixed;
+    background:#cecec;
+    box-shadow:;;
+}
+@media only screen and (max-width:980px){
+    .side-menu{
+        width:34%;
+        z-index:20;
+        top:;;
+        position:fixed;
+        font-size:;;
+        display:none;
+    }
+    .side-menu ul li ul{
+        top:;;
+    }
+    .side-menu ul li:hover ul{
+        margin-left:33%;
+    }
+    
+    
+}
+/*--- slider image --*/
+
+.slider{
+    width:85%;
+    margin-left:;;
+    padding:0 10px;
+}
+.carousel{
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+}
+.carousel-control{
+    z-index: 1;
+}
+
+/*--- featured categories --*/
+.featured-categories{
+  margin:;;  
+}
+.featured-categories img{
+    width:100%;
+    padding:20px 0;
+    transition:1s;
+    cursor:pointer;   
+}
+.featured-categories img:hover{
+    transform: scale(1.1);
+}
+/*--------on sale products -------------*/
+
+.title-box{
+    background:;;
+    color:;;
+    width:;;
+    padding:;;
+    height:;;
+}
+.title-box h2{
+    font-size:24px;
+}
+.title-box::after{
+    content:'';
+    border-top:;;
+    border-right:;;
+    position:absolute;
+    display:flex;
+}
+/*button animation shopping */
+
+#quick{
+    background:none;
+    color:#ccc;
+    width:240px;
+    height:80px;
+    border:1px solid #338033;
+    font-size:18px;
+    border-radius:4px;
+    transition:.3s;
+}
+#quick:focus{
+    outline:none;
+}
+button:before{
+    content:'';
+    display:block;
+    position:absolute;
+    background:rgba(255,255,255,.5);
+    width:60px;
+    height:100%;
+    left:0;
+    top:0;
+    opacity:.5;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+}
+#quick:after{
+    content:'';
+    display:block;
+    position:absolute;
+    background:rgba(255,255,255,.2);
+    width:30px;
+    height:100%;
+    left:30px;
+    top:0;
+    opacity:0;
+    filter: blur(30px);
+    transform: translateX(-130px) scaleX(-15deg);
+}
+#quick:hover{
+    background:#338033;
+    cursor:pointer;
+}
+#quick:hover:before{
+ transform:translateX(300px) skewX(-15deg);
+ opacity:.6;
+ transition:.7s;
+} 
+#quick:hover:after{
+ transform:translateX(300px) skewX(-15deg);
+ opacity:1;
+ transition:.7s;
+} 
+/* login bar */
+
+.login{
+    width:100%;
+    height:100%;
+    background-image:linear-gradient(rgba(0,0,0,0.4),url());
+    background-position-x: center;
+    background-size: cover;
+    position:absolute;
+}
+.form-box{
+    width:380px;
+    height:480px;
+    position:relative;
+    margin:6% auto;
+    background:#fff;
+    padding:5px;
+    overflow-x: hidden;
+}
+.button-box{
+    width:220px;
+    margin:35px auto;
+    position:relative;
+    box-shadow:0 0 20px 9px #338033;
+}
+.toogle-btn{
+    padding:10px 30px;
+    cursor:pointer;
+    background:transparent;
+    border:0;
+    outline:none;
+    position:relative;
+}
+#btn{
+    top:0;
+    left:0;
+    position:absolute;
+    width:110px;
+    height:100%;
+    background:linear-gradient(to right,#ff,#ffa);
+    border-radius:30px;
+    transition:.5s;
+}
+.social-icon{
+    margin:30px auto;
+    text-align:center;
+}
+.social-icon img{
+    width:30px;
+    margin:0 12px;
+    box-shadow:0 0 20px 0 #7f7f7f3d;
+    cursor:pointer;
+    border:50%;
+}
+.input-group{
+    top:180px;
+    position:absolute;
+    width:280px;
+    transition:.5s;
+}
+.input-field{
+    width:100%;
+    padding:10px 0;
+    margin:5px 0;
+    border-bottom:1px solid #999;
+    outline:none;
+    background:transparent;
+}
+.cech-box{
+    margin:;;
+}
+span{
+    color:;;
+    font-size:;;
+    bottom:;;
+    position:absolute;
+}
+#login{
+    
+}
+#register{
+    
+}
+
+/*-----------registration-------------*/
+
+
+.register-left{
+    text-align:center;
+    color:;
+    padding:;
+}
+
+.register-left p{
+    padding:;
+}
+
+.register-left .btn-primary{
+    border-radius:1.5rem;
+    border:none;
+    width:120px;
+    background:;
+    font-weight:600;
+    color:;
+    margin-top:;
+    padding:;
+}
+
+.register-left .btn-primary:hover{
+    background:;
+    
+}
+
+.register-right{
+    border:none;
+    background:;
+    border-top-left-radius:;
+    border-bottom-left-radius:;
+}
+
+.register-right h2{
+    text-align:center;
+    margin-bottom:10px;
+    color:;
+}
+
+.register-form{
+    padding:30px;
+}
+.register-right .btn-primary{
+    border-radius:;
+    border:none;
+    width:120px;
+    background:;
+    font-weight:600;
+    color:;
+    margin-top:20px;
+    padding:10px;
+    flex-flow:column wrap;
+}
+.register-right .btn-primary:hover{
+    background: ;
+}

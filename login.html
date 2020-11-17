@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro de Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <button type="button" class="toogle-btn" onclick="login()">Logar</button>
+                    <button type="button" class="toogle-btn" onclick="registra()">Registrar</button>
+                </div>
+            </div>
+        </div>
+        <div class="social-icon">
+            <img src="facebook">
+        </div>
+        <form id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="user id" required>
+            <input type="text" class="input-field" placeholder="entre a senha" required>
+            <input type="checkbox" class="check-box"><span>Relembrar Senha</span>
+            <button type="submit" class="submit-btn">Logar</button>
+        </form>
+        <form id="register" class="input-group">
+            <input type="text" class="input-field" placeholder="user id" required>
+            <input type="text" class="input-field" placeholder="entre a senha" required>
+            <input type="checkbox" class="check-box"><span>Eu concordo com os termos</span>
+            <button type="submit" class="submit-btn">registro</button>
+        </form>
+        
+        <script>
+            var log = document.getElementById("login");
+            var reg = document.getElementById("register");
+            var bt = document.getElementById("btn");
+            
+            function registra(){
+                log.style.left = "-400px";
+                reg.style.left = "50px";
+                bt.style.left = "110px";
+            }
+            function login(){
+                log.style.left = "50px";
+                reg.style.left = "450px";
+                bt.style.left = "0";
+            }
+        </script>
+    </body>
+</html>
