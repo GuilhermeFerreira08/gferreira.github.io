@@ -8,9 +8,43 @@ and open the template in the editor.
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <link href="{{STATIC_URL}}estilo.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    {% extends index.html %}
     <body>
-        <div>TODO write content</div>
+        <div>
+            <div>
+            {{cliente.id}}
+            </div>
+            <div>
+                <h2>Lista de pedidos do cliente<span>{{cliente.nome}}</span></h2>
+                <h3>Atualizada em {{carrinho.data}}</h3>
+                <div>
+                    {{produto}}
+                    {% if pedido %}
+                    <div>
+                        <p>Pedido recém-inserido</p>
+                        <a>{{pedido.nome}}
+                         - {{pedido.id}}
+                        {{pedido.data}}</a>
+                        <h2>{{pedido.status}}</h2>
+                        <h3>{% url produto %}</h3>
+                    </div>
+                    {% end if%}
+                    <div>
+                        {% for itens in pedidos %} 
+                        <div>
+                        <a>{{pedido.nome}}
+                         - {{pedido.id}}
+                        {{pedido.data}}
+                        </a>
+                        </div>
+                        {% end for %}
+                        <h3>{% url imagem produto %}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
