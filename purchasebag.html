@@ -23,25 +23,30 @@ and open the template in the editor.
                 <div>
                     {{produto}}
                     {% if pedido %}
-                    <div>
                         <p>Pedido recém-inserido</p>
-                        <a>{{pedido.nome}}
-                         - {{pedido.id}}
-                        {{pedido.data}}</a>
-                        <h2>{{pedido.status}}</h2>
-                        <h3>{% url produto %}</h3>
-                    </div>
+                        <a href={% %} class="list-group-item list-group-item-action active">
+                            <div class="d-flex w-100 justify-content-between">    
+                            <a>{{pedido.nome}}
+                            - {{pedido.id}}
+                            {{pedido.data}}</a>
+                                <small>{% url produto %}</small>
+                                <h2 class="mb-1">{{pedido.status}}</h2>
+                            </div>
                     {% end if%}
                     <div>
-                        {% for itens in pedidos %} 
-                        <div>
-                        <a>{{pedido.nome}}
-                         - {{pedido.id}}
-                        {{pedido.data}}
-                        </a>
-                        </div>
-                        {% end for %}
-                        <h3>{% url imagem produto %}</h3>
+                        <ul class="list-group">
+                            {% for itens in pedidos %} 
+                            <div class="list-group-item list-group-item-info">
+                             <a href="#" class="list-group-item list-group-item-action">
+                                <div>
+                                    {{pedido.nome}}
+                                    - {{pedido.id}}
+                                    {{pedido.data}}
+                                </div>
+                             </a>
+                            </div>
+                            {% end for %}
+                            <h3><a href = {% url %}></a></h3>
                     </div>
                 </div>
             </div>
