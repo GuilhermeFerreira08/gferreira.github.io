@@ -13,33 +13,81 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 md-1">
-                    <div class="row">
-                        <div class="col-md-5 register-left">
+        <div class=" main col-md-12 container">
+            <div class="jumbotron text-center hero">
+                <div class="forms md-1">
+                    <div class="r">
+                        <div class="register-left">
                             <img src="icon.png">
                             <h3>Acesse já!</h3>
-                            <p>Faça a sua subscrição para acesso ao nosso catalogo</p>
-                            <button type = "button" class = "btn btn-primary"></button>
+                            <p>Faça a sua subscrição para acesso as vendas em nosso catálogo</p>
+                            <p>Caso já esteja cadastrado,clique abaixo para ter acesso as nossas ofertas</p>
+                            <button type="button" class="btn btn-primary">Log</button>
                         </div>
-                        <div class="col-md-7 register-right">
-                            <h2>Registro</h2>
+                        <div class="social-icon">
+                            <img src="#">
+                        </div>
+                        <form action="" method="POST" id="register" class="col-md-7 register-right">
+                            <h3>Registro de novo usuário</h3>
                             <div class="register-form">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Name">
+                                <div class="campo">
+                                    <label for="nome">
+                                    <h3>Nome</h3>
+                                    <div class="input-group prepend close">  
+                                    <span class="input-group-text w-25 p-3 sym">
+                                        <i>%</i>
+                                    </span>
+                                        <input type="text" id="nome" class="form-control input-field" placeholder="Nome">
+                                    </div>
+                                    </label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="UserName">
+                                <div class="campo">
+                                <label for="email">
+                                    <h3>Email</h3>
+                                    <div class="input-group prepend close">  
+                                        <span class="input-group-text w-25 p-3 sym">
+                                        <i>%</i>
+                                        </span>
+                                        <input type="text" id="email" class="form-control input-field" placeholder="Email">
+                                    </div>
+                                </label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email">
+                                <div class="campo">
+                                <label for="cpf">
+                                    <h3>CPF</h3>
+                                    <div class="input-group prepend close">  
+                                    <span class="input-group-text w-25 p-3 sym">
+                                           <i>%</i>
+                                    </span>
+                                        <input type="text" id="cpf" class="form-control input-field" placeholder="cpf">
+                                    </div>
+                                </label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Password">
+                                <div class="campo">
+                                <label for="end">
+                                    <h3>Endereço</h3>  
+                                    <span class="input-group-text w-25 p-3 sym">
+                                            <i>%</i>
+                                    </span>
+                                        <input type="text" id="end" class="form-control input-field" placeholder="Endereço">
+                                    </label></div>    
+                                
                                 </div>
-                            </div>
-                        </div>
+                                </div>
+                                <div class="campo col-md-3">
+                                    <label for="confirm">
+                                    <h3>Digite a senha</h3>
+                                        <input id="confirm" type="password" class="form-control input-field">
+                                    </label>
+                                    <label for="confirm">
+                                    <h3>Confirma sua senha</h3>
+                                        <input id="confirm" type="password" class="form-control input-field">
+                                    </label>
+                            <button form="register" class="submit-btn" type="submit" name="cadastro" autofocus="">
+                                
+                        </button></div>
+                        </form>
                     </div>
                 </div>
             </div>
