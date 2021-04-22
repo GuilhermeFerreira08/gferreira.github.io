@@ -54,8 +54,6 @@ class Cliente(models.Model):
         pass
 
 
-
-
 class Categoria(models.Model):
     produtos = models.ForeignKey('Produto',on_delete=models.CASCADE,blank=True,parent_link=True,related_name="categoria")
     nome = models.CharField(max_length=30,blank=False,primary_key=True)
@@ -95,7 +93,7 @@ class Produto(models.Model):
         return ' \n'.join('{p.nome_produto}-{p.descricao}')
     display_view.short_description = 'ViewProduct'
 
-'''
+
 class Item(models.Model):
     item_produto = models.OnetoOneField(Produto,primary_key = True,on_delete=models.CASCADE) 
     preco = models.DecimalField(max_digits=5,decimal_places=2)
@@ -118,5 +116,5 @@ class ItemPedido(models.Model):
      ped_id = models.UUIDField(primary_key=True, default=uuid.uuid4)#id do item  
      comprado = models.BooleanField() 
         
-'''
+
         
