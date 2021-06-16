@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Nome do Produto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:wght@300&display=swap">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <meta name="description" content="Plataforma ecommerce de conclusao de curso">
+  		<meta name="keywords" content="ecommerce">
+  		<meta name="author" content="Eu">
+        <style>
+            *{
+              margin:0;
+              padding:0;
+            }
+            .box{
+                margin-top:100px;
+                display:block;
+                max-width: 50%;
+                
+            }
+            .select{
+              
+            }
+            .main{
+                position: relative;
+                box-sizing: content-box;
+                margin-left:25%;
+               	width:18rem;
+            }
+            .score{
+                
+                
+            }
+            h3,h4,h5{
+                font-color:#AE4321;
+                font-weight:thin;
+                font-family:"Titillium",sans-serif;
+            }
+            .card-body{
+                
+            }
+            button[name="compra"]{
+             border-color: blue;
+             border-width: 2px; 
+             padding-top: 5px;	
+            }
+            button{
+            	margin:1em 1em;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+    	{% include base.html %}
+    	<div class = "jumbotron text-center">
+        <div class = "box container">
+            <div class="main card">
+                <img src="..\public_html\imagens\image.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class=" name card-title">{produto.object.nome}</h5>
+                    <caption>Codigo<caption>
+                    <div class="score">
+                    	<small>Classificacao</small><br>
+                    	{% block %}
+                    	{% if itemcompra.object.classificacao %}
+                    	{% for %}
+                    		<span class ='fa fa-star'></span>
+                    		<span class ='fa fa-star'></span>
+                    		<span class ='fa fa-star'></span>
+                    		<span class ='fa fa-star'></span>
+                    		<span class ='fa fa-star-o'></span>
+                    	{% endfor %}
+                    	{% endif %}
+                    	{% endblock %}
+                	</div>
+                        <p>{% produto.object.fabricante %}</p>
+                        <p>{% produto.object.marca %}</p>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>	
+                    <div class='price'>
+                        <pre><code>R<i class='fas fa-dollar-sign'></i>0</code></pre>
+                    </div>
+                        <article class="card-text">
+                            <div class="product-description">
+                                {% produto.object.descricao %}
+                            </div>
+                        </article>
+                    	<button href="#" class="btn btn-primary clearfix" name = "add">
+                    		<h3>Adicionar ao carrinho</h3>
+                    	</button>
+                    	<button href="#" class="btn btn-default btn-sm clearfix" name = "compra">
+                    		<h4>Comprar logo</h4>
+                    	</button>
+                    	<div class="select">
+                        	<select>
+                            	<optgroup label="quant">
+                            		<h4>Quantidade encontrada</h4>
+                            		<span class="badge">
+                            		{% itemcompra.object.quantidade %}</span>
+                            	{% for %}
+                                	<option value="1">1</option>
+                                	<option value="2">2</option>
+                                	<option value="3">3</option>
+                                	<option value="4">4</option>
+                                {% endfor %}
+                            	</optgroup>
+                        	</select>
+                    	</div>
+                	</div>
+            	</div>
+        	</div>
+        </div>
+    </body>
+</html>

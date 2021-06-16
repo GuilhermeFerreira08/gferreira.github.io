@@ -1,0 +1,100 @@
+<html lang="pt-br">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--<link rel="stylesheet" src="../static/estilo.css"></link> -->
+        <link rel="stylesheet" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   --> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	</head>
+<body>
+    <div class = " container header">
+        <!-- Seletor de busca rapida de produtos de acordo com a categoria -->
+        <div class="form-group row">   
+            <div class = "input-group-btn collapse side-menu" id="side-menu">
+                <label for="inputsm">Small input</label>
+                <input class = "form-control" type = "text" placeholder="palavras-chave" id="inputsm">
+                <button type="button" class="btn btn-lg btn-info" data-toogle="collapse" data-target = "#side-menu">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+                <ul>
+                    <li>Promoções<i class="fa fa-angle-right"></i>
+                        <ul>
+                            <li>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value ="categoria">
+                                <h3>Categoria</h3>
+                                </label>
+                            </div>
+                            </li>
+                            <li>
+                                <div class="radio">
+                                    <label for="categoria1">
+                                        <input type="radio" name ="categoria" checked>
+                                    </label>
+                                    <label for="categoria2">
+                                        <input type="radio" name ="categoria2">
+                                    </label>
+                                    <label for="categoria3">
+                                        <input type="radio" name ="categoria3">
+                                    </label>
+                                    <label for="categoria4">
+                                        <input type="radio" name ="categoria4">
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label for = "menor"><!--faixa de preço-->
+                                        <input type="checkbox disabled" value ="menos de" id="menor">
+                                    </label>
+                                    <label for="entre e">
+                                        <input type="checkbox disabled" value ="entre e" id="entre e">
+                                    </label>
+                                    <label for ="entre e">
+                                        <input type="checkbox disabled" value ="entre e"id = "entre e">
+                                    </label>
+                                    <label for="mais de">
+                                        <input type="checkbox" value ="mais de">
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value = "primeira">
+                                        <input type="checkbox" value = "segunda">
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--publicados recentemente -->
+                    <li>Novidades<i class="fa fa-angle-right"></i>
+                        <ul>
+                            <li>Sub-menu</li>
+                            <li>Sub-menu</li>
+                            <li>Sub-menu</li>
+                            <li>Sub-menu</li>
+                        </ul>
+                    </li>
+                    <!-- busca por classificacao dos produtos-->
+                    <li>Preferidos<i class="fa fa-angle-right"></i>
+                        <ul>
+                            <li>Sub-menu</li>
+                            <li>Sub-menu</li>
+                            <li>Sub-menu</li>
+                            <li>Sub-menu</li>
+                        </ul>
+                    </li>
+                    <li><i class="fa fa-angle-right"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	</body>
+</html>

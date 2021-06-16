@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registro de Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        <link rel="stylesheet" href="../static/estilo.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            *{  margin:0;
+                padding:0;
+                width:100%;
+            }
+            body{
+                background-color:#f1f3f4;
+                font-family:sans-serif;
+                width:50em;
+                padding: 1em;
+            }
+            @media (max-width: 1800px) {
+            .main{
+                display: flex;
+                flex-direction: column;
+                margin-left: 25%;
+                
+            }
+            button{
+                max-width:25%;
+                padding:5px;
+                margin:1em 1em 2em;
+                font-size:28px;
+                font-style:;
+
+            }
+            button:hover{
+                background-color:;
+                border:2px;
+                border-color:white;
+                color:;
+            }
+            
+            .hero{
+                margin-top:100px;
+                border-radius: 5px;
+                align-self: center;
+            }
+            .forms{
+                border:1px;
+                border-color:red;
+                align-self:center;
+                box-sizing:content-box;
+            }
+            #login{
+                border:1px;
+                border-color:red;
+
+            }
+            #register{
+                border:1px red;
+
+            }
+            .social-icon{
+
+            }
+            input{
+                font-size:24px;
+                color:#;
+                padding: 0em 1em 1em 0em;
+                background-color: #AAA;
+                background-position: 10px;
+                margin:0.7 em;
+                max-width:50%;
+                border-radius: 15px;
+            }
+            input:focus,input:hover{
+                background-color:;
+                border:1px solid;
+            }
+            input #name{
+                background-image:url();
+            }
+            input #pass{
+                background-image:url();
+            }
+            .check-box{
+                border:2px solid #DDD;
+                outline-width:medium;
+                max-width: 550px;
+                flex-shrink: 2;
+                display:inline-flex;
+            }
+            .check-box span{
+                font-size: ;
+                font-weight: ;
+                display: inline-block;
+
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container main">
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <button type="button" class="toogle-btn" onclick="login()">Logar</button>
+                    <button type="button" class="toogle-btn" onclick="registra()">Registrar</button>
+                </div>
+            </div>
+        </div>
+        <div class="social-icon">
+            <img src="facebook">
+        </div>
+        <div class="input-group forms">
+        <form id="login" class="input-group">
+                <div class="input-group prepend close m-4">  
+                    <span class="input-group-text w-25 sym">
+                        <i class="bi bi-emoji-smile"></i>
+                    </span>
+                    <input type="text" class="form-control input-field" id=" basic-username" placeholder="Nome de usuário" aria-label="Username" required>
+                </div>         
+                <div class="input-group prepend close m-6">  
+                    <span class="input-group-text prepend w-25 sym">
+                        <i class="bi bi-lock"></i>
+                    </span>
+                    <input type="text" class=" form-control input-field m-4" id="basic-pass" placeholder="Entre com a senha" aria-label="Password" required>
+                    <div class="check-box">
+                        <input type="checkbox" class="form-control input-field">
+                        <span class="input-group-text">Relembrar Senha</span>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="agreement">
+                        <input type="checkbox" class="form-check-input" id="agreement"> 
+                        <span class="d-inline w-50 p-3">Concorda em continuar logado</span>
+                    </label>
+                    <a class="stretched-link" id="recpass"><p>Esqueceu a sua senha?</p></a>
+                </div>
+            <button type="submit" class="submit-btn">Logar</button>
+        </form>
+            
+        </div>
+        </div>
+        <script>
+            var log = document.getElementById("login");
+            var reg = document.getElementById("register");
+            var bt = document.getElementById("btn");
+            
+            function registra(){
+                log.style.left = "-400px";
+                reg.style.left = "50px";
+                bt.style.left = "110px";
+            }
+            function login(){
+                log.style.left = "50px";
+                reg.style.left = "450px";
+                bt.style.left = "0";
+            }
+        </script>
+    </body>
+</html>

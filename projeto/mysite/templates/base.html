@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Ecommerce</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--<link rel="stylesheet" src="../static/estilo.css"></link> -->
+        <link rel="stylesheet" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   --> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    </head>
+    <style>
+        
+        @media screen and (min-width: 480px) {
+        *{
+            margin:0;
+            padding:0;
+        }
+        nav{
+            display: absolute;
+        }    
+        #head{
+          padding: 1em 2em;
+          margin-top:1em;
+          background-color:#DDD123;
+          width:100%;
+          text-align: center;
+          position: sticky;text-indent: 50px;
+          vertical-align: middle;
+        }
+        
+        #logo{
+            border-radius: 50%;
+            border-color: black;
+            border-width: 2px;
+            box-shadow:1px 1px 1px;
+        }
+        #menu{
+            box-sizing:border-box;
+            background-color: red;
+            overflow: hidden;
+
+        }
+        #menu-bar{
+            display:block;
+            
+        }
+
+        .bar{ 
+            margin:5px 2px 5px 2px;
+            padding:10px;
+            
+        }
+        .bar li {
+            margin: auto;
+            list-style-type: none;
+            box-shadow: 2px 4px 2px 2px;
+            
+        }
+        .bar li a{
+            font-weight: bolder;
+        
+            text-align:center;
+        }
+
+        .bar .category{
+            width:25%;
+            padding:5px 10px;
+            list-style-type: none;
+            text-align: justify;
+            margin-left:8em;
+            border-radius:25px;
+            text-decoration: none;
+        }
+        
+        .bar .category:hover{
+            background:yellow;
+            text-decoration: none;
+        }
+        #navbar{
+            display: absolute;
+        }
+        #search-box{
+            padding:5px 5px;
+            vertical-align: middle;  
+        }
+        #search-box button{
+            margin-left:5px;
+        }
+        pre code{
+            font-family:monospace;
+            font-size:36px;
+            padding-right: 5px;
+        }
+        footer::before{
+            content:'';
+            background:url();
+        }
+
+    }
+    </style>
+<body>
+<nav class="navbar navbar-inverse" id="navbar">
+        <i class="fa fa-bars" id="menu-btn" onclick="openMenu()"></i>
+        <i class="fa fa-times" id="close-btn" onclick="closeMenu()"></i>
+    <div class="container-fluid" id="menu">    
+            <div class="navbar-header" id="head">
+                <a href="index.html">
+                    <img src = "imagens/logo.jpg" class="img-thumbnail" id="logo" width="20%">
+                    <div class="navbar-brand">
+                        <h1>{% block titulo %}
+                        <!--Plataforma E-Commerce-->
+                        {% endblock %}</h1>
+                    </div>
+                </a>            
+            </div>
+            <div id="menu-bar">
+                    <div>
+                        <p>{{cliente.nome}}</p>
+                        <p>{{data.atual}}</p>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="mr-auto active text-blue"><a href="#">Home</a></li>
+                        <ul>
+                        <div class="d-flex l-3 p-3 justify-content-end bar">
+                            <li>
+                                <a href="login.html" role="button" class="btn btn-light">Logar</a>
+                            </li>
+                            <li>
+                                <a href="registration.html" role="button" class="btn btn btn-light">Cadastrar
+                                </a>
+                            </li>
+                        </div>
+                        </ul>
+                    </ul>
+                    <div class="d-inline-flex justify-content-between bar">
+                        {% for categoria in categorias %}
+                        <div class=category><a href="{{categoria.slug_cat}}">{{categoria.cat_id}}{{ categoria.nome }}</a></div>
+                    </div>
+                        {% endfor %}
+            </div>
+            <!--ferramenta de busca rápida por resultados por palavra-->
+            <form class="d-inline-flex navbar-form navbar-right bar"  action="#">
+                <div class="d-flex align-content-around form-group" id="search-box">
+                    <input type="text" class="form-control" placeholder="Busca Rápida">
+                    <button type="submit" class="btn btn-secondary">Enviar</button>
+                </div> 
+            </form>
+
+            <div class="d-flex justify-content-end"> 
+                    
+                    <div class="bar">
+                        
+                        <p><i class = "far fa-heart"></i>
+                            Total de produtos catalogados
+                            <pre><code>0</code></pre></p>
+                    </div>
+            </div>
+    </div>
+</nav>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+            function openMenu(){
+                document.getElementById("menu").style.display = 'block';
+                document.getElementById("menu-btn").style.display = 'none';
+                document.getElementById("close-menu").style.display = 'block';
+            }
+            function closeMenu(){
+                document.getElementById("menu").style.display = 'none';
+                document.getElementById("menu-btn").style.display = 'block';
+                document.getElementById("close-menu").style.display = 'none';
+            }
+        </script>
+       </body> 
+<!-- Rodapé -->
+<footer class = "container-lg pt-4 my-3 bg-dark footer">
+    <div class = "text-center">
+        <div class='column'>
+                <h4 class='col-lg'>Contato</h4>
+                    <p><a href="mailto:do@exemplo.com">author@examplo.com</a></p>
+        </div>
+        <div class='row'>
+            <h4 class='col-lg'>Links Úteis</h4>
+        </div>
+        <div class='column'>
+            <h4 class='col-lg'><a href="#">Política de privacidade</a></h4>
+            <h4 class='col-lg'><a href="#">Termos de Uso</a></h4>
+        </div>
+    </div>
+</fotter>

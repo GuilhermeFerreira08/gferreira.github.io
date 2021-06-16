@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Faça o seu cadastro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        <link rel="stylesheet" href="../static/estilo.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <style>
+        *{  margin:0;
+                padding:0;
+                width:100%;
+            }
+            body{
+                background-color:#f1f3f4;
+                font-family:sans-serif;
+                width:50em;
+                max-width:;
+                padding: 1em;
+            }
+            @media (max-width: 1800px){
+            .main{
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+            }
+            button{
+                max-width:25%;
+                padding:5px;
+                margin:1em 1em 2em;
+                font-size:28px;
+                font-style:;
+
+            }
+            button:hover{
+                background-color:;
+                border:2px;
+                border-color:white;
+                color:;
+            }
+            .forms{
+                border:1px;
+                border-color:red;
+                align-self:center;
+                box-sizing:content-box;
+            }
+            input{
+                font-size:24px;
+                color:#;
+                padding: 0em 1em 1em 0em;
+                background-color: #AAA;
+                background-position: 10px;
+                margin:0.7em;
+                max-width:50%;
+                border-radius: 15px;
+            }
+            input:focus,input:hover{
+                background-color:;
+                border:1px solid;
+            }
+            input #name{
+                background-image:url();
+            }
+            input #pass{
+                background-image:url();
+            }
+            .hero{
+                margin-top:100px;
+                border-radius: 5px;
+                align-self: center;
+            }
+          
+            .register-left h3{
+                font-size:18px;
+                font-family:;
+                color:;
+            }
+            .register h3{
+                font-size:16px;
+            }
+            .register-left p{
+                font-size:12px;
+                font-weight: bold;
+            }
+            
+            .campo{
+                display:table;
+                margin-left: 25%;
+            }
+            .campo h3{
+                font-size:16px;
+            }
+            p{
+
+            }
+            
+    }
+    
+    </style>
+   <!--{% extends "index.html" %}-->
+    <body cz-shortcut-listen="true">
+        <div class=" main col-md-12 container">
+            <div class="jumbotron text-center hero">
+                <div class="forms md-1">
+                    <div class="register">
+                        <div class="register-left">
+                            {% load static %}
+                            <img src={{"mysite/icone.png"}} alt="ecommerce">
+                            <h3>Acesse já!</h3>
+                            <p>Faça a sua subscrição para acesso as vendas em nosso catálogo</p>
+                            <p>Caso já esteja cadastrado,clique abaixo para ter acesso as nossas ofertas</p>
+                            <button type="button" class="btn btn-primary">Log</button>
+                        </div>
+                        <div class="social-icon">
+                            <img src="#">
+                        </div>
+                        {% if submitted %}
+                            <div class="register-left">
+                                <h3>Seus dados já foram submetidos</h3>
+                                <p>Logo poderá efetuar seu login</p>
+                            </div>
+                        {% else %}
+                        {{ form.non_field_errors }}
+                        <form action="/nome" method="POST" id="register" class="col-md-7 register-right" novalidate>
+                            <h3>Registro de novo usuário</h3>
+                            <div class="register-form">
+                                <div class="form-group">
+                                <div class="campo">
+                                    {{ form.nome.errors }}
+                                    <label for="nome">
+                                    <h3>Nome</h3>
+                                    {{ form.nome }}
+                                    <div class="input-group prepend close">  
+                                    <span class="input-group-text w-25 p-3 sym">
+                                        <i class="bi bi-emoji smile"></i>
+                                    </span>
+                                        <input type="text" id="{{ form.nome.id_for_label }}" name="nome" class="form-control input-field" maxlength="20" placeholder="Nome de registro do usuário" required>
+                                    </div>
+                                    </label>
+                                </div>
+                                <div class="campo">
+                                    {{form.email.errors}}
+                                <label for="{{ form.email.id_for_label }}">
+                                    <h3>Email</h3>
+                                    {{ form.email }}
+                                    <div class="input-group prepend close">  
+                                        <span class="input-group-text w-25 p-3 sym">
+                                            <i>%</i>
+                                        </span>
+                                        <input type="text" name="email" class="form-control input-field" placeholder="Email de contato">
+                                    </div>
+                                </label>
+                                </div>
+                                <div class="campo">
+                                {{ form.cpf.errors }}
+                                <label for="{{ form.cpf.id_for_label }}">
+                                    <h3>CPF</h3>
+                                    {{ form.cpf }}
+                                    <div class="input-group prepend close">  
+                                    <span class="input-group-text w-25 p-3 sym">
+                                        <i>%</i>
+                                    </span>
+                                        <input type="text" class="form-control input-field" placeholder="cpf">
+                                    </div>
+                                </label>
+                                </div>
+                                <div class="campo">
+                                    {{ form.end.errors }}
+                                <label for="{{ form.end.id_for_label }}">
+                                    <h3>Endereço</h3>
+                                    {{ form.end }}  
+                                    <span class="input-group-text w-25 p-3 sym">
+                                            <i>%</i>
+                                    </span>
+                                        <input type="text" class="form-control input-field" placeholder="Endereço">
+                                    </label>
+                                </div>    
+                                </div>
+                                </div>
+                                <div class="campo col-md-3">
+                                    {{ form.senha }}
+                                    <label for="{{ form.senha.id_for_label }}">
+                                    <h3>Digite a senha</h3>
+                                        <input type="password" class="form-control input-field">
+                                    </label>
+                                    {{ form.contrasenha }}
+                                    <label for="{{ form.contrasenha.id_for_label }}">
+                                    <h3>Confirma sua senha</h3>
+                                        <input type="password" class="form-control input-field">
+                                    </label>
+                            <button form="register" class="submit-btn" type="submit" name="cadastro" autofocus>      
+                        </button></div>
+                        {% csrf_token %}
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+
